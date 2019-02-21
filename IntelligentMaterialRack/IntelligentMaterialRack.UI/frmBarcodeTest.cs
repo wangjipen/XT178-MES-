@@ -248,6 +248,7 @@ namespace IntelligentMaterialRack.IntelligentMaterialRack.UI
             //验证strFileName是否为空或值无效 
             if (fileNameString.Trim() == " ") 
             {
+
                 return;
             }
             //定义表格内数据的行数和列数 
