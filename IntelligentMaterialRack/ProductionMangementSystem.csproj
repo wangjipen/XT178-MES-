@@ -1,0 +1,868 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67FBBBD6-48A0-4396-B897-392629D24206}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IntelligentMaterialRack</RootNamespace>
+    <AssemblyName>IntelligentMaterialRack</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>F:\2017项目\PTL系统\SoftPublish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>zh-Hans</TargetCulture>
+    <ProductName>PTL智能取料系统</ProductName>
+    <PublisherName>李远平</PublisherName>
+    <SuiteName>PTL</SuiteName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>www.ico.la_a6213a20998fb755abebec94b8e2671b_48X48.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DA697EAD40A4E0990A11684DAF5BB7A89810BB13</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="Advantech.Adam">
+      <HintPath>G:\Debug\Advantech.Adam.dll</HintPath>
+    </Reference>
+    <Reference Include="Advantech.Common">
+      <HintPath>G:\Debug\Advantech.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Advantech.Protocol">
+      <HintPath>G:\Debug\Advantech.Protocol.dll</HintPath>
+    </Reference>
+    <Reference Include="Amplified.ValueObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Amplified.ValueObjects.1.0.0\lib\net452\Amplified.ValueObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Amplified.ValueObjects.Newtonsoft.Json, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Amplified.ValueObjects.Newtonsoft.Json.1.0.0\lib\net452\Amplified.ValueObjects.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Aqua, Version=4.0.0.0, Culture=neutral, PublicKeyToken=82d6c51b67e8b655, processorArchitecture=MSIL">
+      <HintPath>..\packages\aqua-core.4.5.1\lib\net451\Aqua.dll</HintPath>
+    </Reference>
+    <Reference Include="Aqua.Newtonsoft.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=82d6c51b67e8b655, processorArchitecture=MSIL">
+      <HintPath>..\packages\aqua-core-newtonsoft-json.4.5.1\lib\net451\Aqua.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Architecture.Foundation.UtilityServices, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AF.UtilityServices.1.0.3\lib\Architecture.Foundation.UtilityServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Aresoft.Command">
+      <HintPath>G:\Debug\Aresoft.Command.dll</HintPath>
+    </Reference>
+    <Reference Include="Aresoft.Controls">
+      <HintPath>G:\Debug\Aresoft.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="CheckBoxComboBox">
+      <HintPath>G:\Debug\CheckBoxComboBox.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomMarshalers" />
+    <Reference Include="Dapper">
+      <HintPath>G:\Debug\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.SimpleCRUD">
+      <HintPath>G:\Debug\Dapper.SimpleCRUD.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Design, Version=12.5.0.2, Culture=neutral, PublicKeyToken=2c9ff1fddc42653c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Keyboard, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar.Keyboard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar.Layout.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout.Design, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar.Layout.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar.Schedule.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar.SuperGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation, Version=12.5.0.2, Culture=neutral, PublicKeyToken=bc4a9d761ea44ef0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation.Design, Version=12.5.0.2, Culture=neutral, PublicKeyToken=30cefae8f341f577, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.Instrumentation.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.SuperGrid.Design, Version=12.5.0.2, Culture=neutral, PublicKeyToken=1fea3f5d8d482bff, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.SuperGrid.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.TreeGX, Version=12.5.0.2, Culture=neutral, PublicKeyToken=cfcbd7476b2389d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.TreeGX.dll</HintPath>
+    </Reference>
+    <Reference Include="EncryPtForMy, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EncryPtForMy.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExampleLibrary">
+      <HintPath>G:\Debug\ExampleLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="FastSerializer.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastSerializer.Net.1.0.0.93852365\lib\net45\FastSerializer.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>G:\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IrisSkin4">
+      <HintPath>G:\Debug\IrisSkin4.dll</HintPath>
+    </Reference>
+    <Reference Include="ISymWrapper" />
+    <Reference Include="Json2KeyValue, Version=1.1.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Json2KeyValue.1.3.0.3\lib\net40\Json2KeyValue.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonSubTypes, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JsonSubTypes.1.5.1\lib\net45\JsonSubTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow">
+      <HintPath>G:\Debug\Lassalle.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Lassalle.Flow.Layout">
+      <HintPath>G:\Debug\Lassalle.Flow.Layout.dll</HintPath>
+    </Reference>
+    <Reference Include="libnodave.net">
+      <HintPath>G:\Debug\libnodave.net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>G:\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Activities.Build" />
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.Build.Conversion.v4.0" />
+    <Reference Include="Microsoft.Build.Engine" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Tasks.v4.0" />
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\Microsoft.Office.Interop.Excel\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word">
+      <HintPath>..\..\..\..\WeChat Files\Y_Xianglove\Files\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
+    <Reference Include="Microsoft.VisualC" />
+    <Reference Include="Microsoft.VisualC.STLCLR" />
+    <Reference Include="MigraDoc.DocumentObjectModel">
+      <HintPath>G:\Debug\MigraDoc.DocumentObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering">
+      <HintPath>G:\Debug\MigraDoc.Rendering.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering">
+      <HintPath>G:\Debug\MigraDoc.RtfRendering.dll</HintPath>
+    </Reference>
+    <Reference Include="MyAdam">
+      <HintPath>G:\Debug\MyAdam.dll</HintPath>
+    </Reference>
+    <Reference Include="MyExcel, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MyExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="MyLog">
+      <HintPath>G:\Debug\MyLog.dll</HintPath>
+    </Reference>
+    <Reference Include="MyPLCDataview">
+      <HintPath>G:\Debug\MyPLCDataview.dll</HintPath>
+    </Reference>
+    <Reference Include="MyPrint">
+      <HintPath>G:\Debug\MyPrint.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql">
+      <HintPath>G:\Debug\MySql.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>G:\Debug\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>G:\Debug\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>G:\Debug\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>G:\Debug\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot">
+      <HintPath>G:\Debug\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.OpenXml">
+      <HintPath>G:\Debug\OxyPlot.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Pdf">
+      <HintPath>G:\Debug\OxyPlot.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.WindowsForms">
+      <HintPath>G:\Debug\OxyPlot.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp">
+      <HintPath>G:\Debug\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting">
+      <HintPath>G:\Debug\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Remote.Linq, Version=5.0.0.0, Culture=neutral, PublicKeyToken=82d6c51b67e8b655, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remote.Linq.5.8.2\lib\net451\Remote.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remote.Linq.Newtonsoft.Json, Version=5.0.0.0, Culture=neutral, PublicKeyToken=82d6c51b67e8b655, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remote.Linq.Newtonsoft.Json.5.8.2\lib\net451\Remote.Linq.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.DurableInstancing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.DynamicData.Design" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Entity.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.RegularExpressions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include=".recipes\Spritely.InheritedTypeJsonConverter\InheritedTypeJsonConverter.cs" />
+    <Compile Include=".recipes\Spritely.SecureStringJsonConverter\SecureStringJsonConverter.cs" />
+    <Compile Include=".recipes\Spritely.SecureString\SecureString.cs" />
+    <Compile Include="BC1DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BC1DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BC1DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BC1DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.BLL\Adam_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmAlarmCode_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmBoltDetail_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmDevice_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmKeypart_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmLeakage_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmLine_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmPlanPrint_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmPlan_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmPLeaking_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmPPlan_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmProductionNum_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmProductionRecipe_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmProductionWay_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmProduction_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmproductionWayRecord_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmPTracking_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmRecipeDetail_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmRecipe_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmReworkWay_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmReworkReson_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmRTracking_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\AsmStation_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\Bolt_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\DataTraceability_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\Function_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\MD5_.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\Print_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\Recipe_PLC_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.BLL\User_BLL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmAlarmCode_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmBoltDetail_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmDevice_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmKeypart_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmLeakage_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmLine_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmPlanPrint_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmPlan_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmPLeaking_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmPPlan_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmProductionNum_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmProductionRecipe_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmProductionWay_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmProduction_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmProductionWayRecord_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmPTracking_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmRecipeDetail_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmRecipe_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmReworkWay_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmReworkReson_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmRTracking_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\AsmStation_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\Bolt_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\ClsCommon.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\clsProperty.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\Table.cs" />
+    <Compile Include="IntelligentMaterialRack.DAL\User_DAL.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmAlarmCodeObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmBoltDetailObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmDeviceObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmKeypartObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmLeakageObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmLineObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmPlanObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmPlanPrintObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmPPlanObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmProductionObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmProductionRecipeObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmProductionWayObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmPTrackingObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmRecipeDetailObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmRecipeObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmReworkResonObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmReworkWayObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmRTrackingObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmStationObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AsmProductionWayRecordObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\AutoSizeFormClass.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\BoltObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\MaterialTraceObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\StationCacheInfo.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\StationProductionObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\Status.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\StatusList.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\UsersObject.cs" />
+    <Compile Include="IntelligentMaterialRack.Moudle\Worker.cs" />
+    <Compile Include="IntelligentMaterialRack.UI\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\Airtightness.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\Airtightness.Designer.cs">
+      <DependentUpon>Airtightness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\Alarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\Alarm.designer.cs">
+      <DependentUpon>Alarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\ClosePlanQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\ClosePlanQuery.Designer.cs">
+      <DependentUpon>ClosePlanQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\configForSN.cs" />
+    <Compile Include="IntelligentMaterialRack.UI\DeviceManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\DeviceManagement.Designer.cs">
+      <DependentUpon>DeviceManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\ElectronicRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\ElectronicRecord.Designer.cs">
+      <DependentUpon>ElectronicRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\FinishPlanQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\FinishPlanQuery.Designer.cs">
+      <DependentUpon>FinishPlanQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmBarcode.designer.cs">
+      <DependentUpon>frmBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmBarcodeTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmBarcodeTest.Designer.cs">
+      <DependentUpon>frmBarcodeTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmConfig.designer.cs">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmLog.designer.cs">
+      <DependentUpon>frmLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmManagement.designer.cs">
+      <DependentUpon>frmManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmMonthly_Production.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmMonthly_Production.Designer.cs">
+      <DependentUpon>frmMonthly_Production.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmSysConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmSysConfig.designer.cs">
+      <DependentUpon>frmSysConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmSystemSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frmSystemSetting.designer.cs">
+      <DependentUpon>frmSystemSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frm_percentofpass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frm_percentofpass.Designer.cs">
+      <DependentUpon>frm_percentofpass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frm_routing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\frm_routing.Designer.cs">
+      <DependentUpon>frm_routing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\ImportRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\ImportRecipe.designer.cs">
+      <DependentUpon>ImportRecipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\NGProductionByDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\NGProductionByDay.Designer.cs">
+      <DependentUpon>NGProductionByDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\OKProductionByDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\OKProductionByDay.Designer.cs">
+      <DependentUpon>OKProductionByDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\PlanManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\PlanManager.Designer.cs">
+      <DependentUpon>PlanManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\PrintManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\PrintManager.Designer.cs">
+      <DependentUpon>PrintManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\ProductionByDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\ProductionByDay.Designer.cs">
+      <DependentUpon>ProductionByDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\ProductionMg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\ProductionMg.designer.cs">
+      <DependentUpon>ProductionMg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\RecipeDetailMg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\RecipeDetailMg.designer.cs">
+      <DependentUpon>RecipeDetailMg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\RecipeMg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\RecipeMg.designer.cs">
+      <DependentUpon>RecipeMg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\ReturnLineMg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\ReturnLineMg.Designer.cs">
+      <DependentUpon>ReturnLineMg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\User_Power_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\User_Power_Manager.designer.cs">
+      <DependentUpon>User_Power_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\WarningManagement1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\WarningManagement1.Designer.cs">
+      <DependentUpon>WarningManagement1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\WarningManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntelligentMaterialRack.UI\WarningManagement.Designer.cs">
+      <DependentUpon>WarningManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\Airtightness.resx">
+      <DependentUpon>Airtightness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\Alarm.resx">
+      <DependentUpon>Alarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\ClosePlanQuery.resx">
+      <DependentUpon>ClosePlanQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\DeviceManagement.resx">
+      <DependentUpon>DeviceManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\ElectronicRecord.resx">
+      <DependentUpon>ElectronicRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\FinishPlanQuery.resx">
+      <DependentUpon>FinishPlanQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\frmBarcode.resx">
+      <DependentUpon>frmBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\frmBarcodeTest.resx">
+      <DependentUpon>frmBarcodeTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\frmConfig.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\frmLog.resx">
+      <DependentUpon>frmLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\frmManagement.resx">
+      <DependentUpon>frmManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\frmMonthly_Production.resx">
+      <DependentUpon>frmMonthly_Production.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\frmSysConfig.resx">
+      <DependentUpon>frmSysConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\frmSystemSetting.resx">
+      <DependentUpon>frmSystemSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\frm_percentofpass.resx">
+      <DependentUpon>frm_percentofpass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\frm_routing.resx">
+      <DependentUpon>frm_routing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\ImportRecipe.resx">
+      <DependentUpon>ImportRecipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\NGProductionByDay.resx">
+      <DependentUpon>NGProductionByDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\OKProductionByDay.resx">
+      <DependentUpon>OKProductionByDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\PlanManager.resx">
+      <DependentUpon>PlanManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\PrintManager.resx">
+      <DependentUpon>PrintManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\ProductionByDay.resx">
+      <DependentUpon>ProductionByDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\ProductionMg.resx">
+      <DependentUpon>ProductionMg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\RecipeDetailMg.resx">
+      <DependentUpon>RecipeDetailMg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\RecipeMg.resx">
+      <DependentUpon>RecipeMg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\ReturnLineMg.resx">
+      <DependentUpon>ReturnLineMg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\User_Power_Manager.resx">
+      <DependentUpon>User_Power_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\WarningManagement1.resx">
+      <DependentUpon>WarningManagement1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntelligentMaterialRack.UI\WarningManagement.resx">
+      <DependentUpon>WarningManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="BC1DataSet.xsc">
+      <DependentUpon>BC1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BC1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BC1DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BC1DataSet.xss">
+      <DependentUpon>BC1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BC1DataSet1.xsc">
+      <DependentUpon>BC1DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BC1DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BC1DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BC1DataSet1.xss">
+      <DependentUpon>BC1DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\C.png" />
+    <None Include="Resources\未标题-2.png" />
+    <None Include="Resources\co_5.png" />
+    <None Include="Resources\co_6.png" />
+    <None Include="Resources\co_4.png" />
+    <None Include="Resources\co_2.png" />
+    <None Include="Resources\co_1.png" />
+    <None Include="Resources\AX.png" />
+    <None Include="Resources\co_7.png" />
+    <None Include="Resources\report-clum.jpg" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\logoforprogram.png" />
+    <None Include="Resources\tool.jpg" />
+    <None Include="Resources\tool1.png" />
+    <None Include="Resources\adminnistrator.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\power.png" />
+    <None Include="Resources\technology.png" />
+    <None Include="Resources\right.png" />
+    <None Include="Resources\left.png" />
+    <None Include="Resources\down.png" />
+    <None Include="Resources\right1.png" />
+    <None Include="Resources\left1.png" />
+    <None Include="Resources\down1.png" />
+    <None Include="Resources\DeviceManager.png" />
+    <None Include="Resources\AlarmInformation.png" />
+    <None Include="Resources\Equipment.png" />
+    <Content Include="jar\json-lib-2.3-jdk15.jar" />
+    <Content Include="jar\jsonplugin-0.30.jar" />
+    <Content Include="jar\struts2-junit-plugin-2.1.8.1.jar" />
+    <Content Include="Resources\station.png" />
+    <None Include="Resources\工艺.png" />
+    <None Include="Resources\工艺路线.png" />
+    <None Include="Resources\up.png" />
+    <None Include="Resources\up1.png" />
+    <Content Include="sysico.ico" />
+    <Content Include="system.ico" />
+    <Content Include="www.ico.la_a6213a20998fb755abebec94b8e2671b_48X48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
