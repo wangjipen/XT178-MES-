@@ -246,9 +246,8 @@ namespace IntelligentMaterialRack.IntelligentMaterialRack.UI
             //返回文件路径 
             string fileNameString = dlg.FileName;
             //验证strFileName是否为空或值无效 
-            if (fileNameString.Trim() == "" || fileNameString.Trim().Equals(null) || fileNameString.Trim() == " ") 
+            if (fileNameString.Trim() == " ") 
             {
-                MessageBox.Show("请输入文件名称","提示",MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             //定义表格内数据的行数和列数 
